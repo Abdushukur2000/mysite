@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amazon Mini</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: grid;
+      grid-template-areas:
+        "aside nav"
+        "menu content"
+        "footer footer";
+      grid-template-columns: 2fr 6fr;
+      grid-template-rows: auto auto auto;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    aside {
+      grid-area: aside;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    aside img {
+      width: 80%;
+      max-width: 120px;
+    }
+
+    nav {
+      grid-area: nav;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #232f3e;
+      color: white;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav li {
+      list-style: none;
+      font-size: 18px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    nav li:hover {
+      color: #ff9900;
+    }
+
+    menu {
+      grid-area: menu;
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    content {
+      grid-area: content;
+      padding: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .card button {
+      background-color: #ff9900;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .card button:hover {
+      background-color: #e68a00;
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: #232f3e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        grid-template-areas:
+          "nav"
+          "aside"
+          "menu"
+          "content"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <img src="https://cdn.pixabay.com/photo/2021/08/10/16/02/amazon-6536326_1280.png" alt="Amazon Logo">
+  </aside>
+
+  <nav>
+    <ul style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <li><i class="fas fa-home"></i> Главная</li>
+      <li><i class="fas fa-list"></i> Каталог</li>
+      <li><i class="fas fa-blog"></i> Блог</li>
+      <li><i class="fas fa-phone"></i> Контакты</li>
+    </ul>
+  </nav>
+
+  <menu>Наши товары</menu>
+
+  <content>
+    <div class="cards">
+      <div class="card">
+        <img src="https://ir.ozone.ru/s3/multimedia-v/c1000/6701911519.jpg" alt="Товар 1">
+        <h3>Кроссовки Nike</h3>
+        <button>Купить</button>
+      </div>
+      <div class="card">
+        <img src="https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_1280.jpg" alt="Товар 2">
+        <h3>iPhone 13</h3>
+        <button>Купить</button>
+</div>
+      <div class="card">
+        <img src="https://w7.pngwing.com/pngs/270/398/png-transparent-laptop-intel-core-hp-envy-hewlett-packard-laptop.png" alt="Товар 3">
+        <h3>Ноутбук HP</h3>
+        <button>Купить</button>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQzd1g4yjItkBcDNsiZN4IpIVv-UwlLF7JGQ&s" alt="Товар 4">
+        <h3>VR очки</h3>
+        <button>Купить</button>
+      </div>
+    </div>
+  </content>
+
+  <footer>
+    <h3>© Все права защищены | Amazon Demo</h3>
+  </footer>
+</body>
+</html>
